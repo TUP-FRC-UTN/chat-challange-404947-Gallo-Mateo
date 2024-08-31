@@ -1,0 +1,55 @@
+<div class="col m-2 mb-0 p-1  border-blue">
+    <div class="col border m-1 rounded">
+        <div class="bg-grey p-2">
+            <h5 class="text-left">Sala de chat</h5>
+        </div>
+        <hr class="bg-dark">
+        <div class="p-2">
+            <h4 class="text-left">Conversacion</h4>
+
+            <div class="row" id="mostrarMensajes">
+                <!-- aca van los mensajitos -->
+                <div class="col">
+                @for(mensaje of mensajesU1; track mensaje){
+                        <p>
+                            <span style="color: rgb(218, 112, 0);">{{mensaje.usuario}}</span>:  {{mensaje.mensaje}}  <span style="color: lightsalmon;">[{{mensaje.fecha | date : "dd/MM hh:mm"}}]</span>
+                        </p>
+                }
+                </div>
+
+                <div class="col">
+                @for(mensaje of mensajesU2; track mensaje){
+                        <p>
+                            <span style="color: rgb(0, 154, 250);">{{mensaje.usuario}}</span>:  {{mensaje.mensaje}}  <span style="color: lightsalmon;">[{{mensaje.fecha | date : "dd/MM hh:mm"}}]</span>
+                        </p>
+                }
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col m-2 mt-0 p-2 align-items-center">
+        <div class="row align-items-center mb-0">
+            <p class="text-green mt-0 mb-1">Componente Mensaje Usuario</p>
+            <div class="col border-green me-2 ms-2 mb-2 p-2">
+                <app-mensaje-usuario
+                    [nombreUsuario]="nombresUsuario[0]"
+                    (lstMensajesEnviados)="onLstMensajesRecibidosU1($event)"
+                >
+                </app-mensaje-usuario>
+            </div>
+            <div class="col border-green me-2 ms-2 mb-2 p-2">
+                <app-mensaje-usuario
+                [nombreUsuario]="nombresUsuario[1]"
+                (lstMensajesEnviados)="onLstMensajesRecibidosU2($event)"
+                >
+                </app-mensaje-usuario>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col mx-3">
+    <p class="text-blue">Componente Sala</p>
+</div>

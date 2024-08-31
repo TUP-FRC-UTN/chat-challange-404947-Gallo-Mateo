@@ -1,0 +1,18 @@
+<div class="col border p-1 rounded">
+    <div class="col border mb-1 rounded">
+        <div class="bg-grey p-1">
+            <p class="text-left">Usuario: {{nombreUsuario}}</p>
+        </div>
+        <hr class="bg-dark">
+        <div class="mx-2 mt-2 mb-1"> 
+            <p class="text-left mb-0">Mensaje</p> 
+        </div>
+        <div class="form-floating mx-1 mb-2">
+            <textarea class="form-control" [(ngModel)]="nuevoMensaje"  id="mensaje" style="height: 100%"></textarea>
+            <label for="mensaje"></label>
+        </div>
+        <div>
+            <button (click)="guardarMensaje()" class="btn btn-primary mb-2">Guardar</button>
+        </div>
+    </div>
+</div>
