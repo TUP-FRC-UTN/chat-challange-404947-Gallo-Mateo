@@ -1,0 +1,10 @@
+.border-orangered{
+    border-color: orangered;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.text-orangered{
+    color: orangered;
+    text-align: right;
+}
